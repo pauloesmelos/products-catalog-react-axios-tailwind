@@ -1,8 +1,8 @@
 import React from 'react';
-import { default as Helmet, default as useHelmet } from '../../helmet/Helmet';
+import { default as Helmet } from '../../helmet/Helmet';
 
 const Saves = () => {
-  useHelmet("Items - Saves", "Your products saves, buyed with react, axios, react query and tailwind", "products, save");
+ 
   return (
     <div>
       <Helmet

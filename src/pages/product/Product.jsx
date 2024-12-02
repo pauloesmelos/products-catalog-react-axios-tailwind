@@ -60,7 +60,7 @@ const Product = () => { // product specify - query by id
                             />
                         ))}
                     </div>
-                    <p className="text-2xl font-medium text-sky-slate">
+                    <p className="text-3xl font-medium text-sky-slate">
                         {Number.parseFloat(data.preco).toLocaleString("pt-BR", {
                             style: "currency",
                             currency: "BRL"
@@ -69,16 +69,19 @@ const Product = () => { // product specify - query by id
                     <div className="text-lg">
                         <p className="font-semibold">
                             Contact:
-                            <span className="text-[#2568E6] font-bold">
+                            <a 
+                                href={`mailto:${data.usuario_id}?subject=Assunto do email`} 
+                                className="text-[#2568E6] font-bold"
+                            >
                                 {" " + data.usuario_id}
-                            </span>
+                            </a>
                         </p>
                     </div>
                     <div className="flex items-center gap-3">
                         <p className="font-semibold">
                             TAG: 
                         </p>
-                        <p className="w-[100px] text-sm p-2 bg-sky-200 text-sky-700 rounded-md font-bold">
+                        <p className="w-[115px] text-sm p-2 bg-sky-200 text-sky-700 rounded-md font-bold">
                             {data.id}
                         </p>
                     </div>
