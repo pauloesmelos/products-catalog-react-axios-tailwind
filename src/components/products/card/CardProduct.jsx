@@ -6,7 +6,7 @@ const CardProduct = ({ id, fotos, nome, preco, vendido }) => {
   return (
     <NavLink
         to={`product/${id}`}
-        className="shadow-md cursor-pointer group border-[3px] border-transparent hover:border-[#2568E6] duration-150 w-[300px] 
+        className="shadow-md cursor-pointer group border-[3px] border-transparent hover:border-[#2568E6] duration-150 sm:w-[230px] lg:w-[300px] 
         rounded-md"
     >
       <div className="overflow-hidden">
@@ -34,7 +34,7 @@ const CardProduct = ({ id, fotos, nome, preco, vendido }) => {
                     />
                 ))}
             </div>
-            <div>
+            <div className="hidden sm:block">
                 <p className="p-2 bg-sky-200 rounded-md text-sm text-sky-600">
                     {!vendido ? ("Indisponível") : ("Em estoque")}
                 </p>

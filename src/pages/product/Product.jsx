@@ -40,9 +40,9 @@ const Product = () => { // product specify - query by id
                 </button>
             </Link>
         </div>
-        <div className="border shadow-lg mt-6 rounded-lg p-6">
+        <div className="border shadow-lg mt-6 rounded-lg p-6 w-[70%] md:w-[85%] lg:w-full">
             {/* product */}
-            <div className="grid grid-cols-3">
+            <div className="grid grid-cols-1 gap-10 md:grid-cols-3">
                 <div className="col-span-1">
                     <img 
                         className="object-cover w-[220px] rounded-2xl" 
