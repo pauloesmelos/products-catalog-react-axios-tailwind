@@ -1,9 +1,12 @@
 import React from 'react';
+import GlobalProducts from '../../global/products/GlobalProducts';
 import ProductsList from './ProductsList';
 
 const Products = () => {
-  return (
-    <main className="w-full pt-2">
+  const { filterProducts } = React.useContext(GlobalProducts);
+
+  return ( /* min-h pra deixar o footer no final da tela */
+    <main className="w-full min-h-[79vh] pt-2">
       <div className="w-full max-w-[1200px] mx-auto px-5 py-4">
         <div className="w-full">
             {/* filter */}
@@ -13,27 +16,42 @@ const Products = () => {
                 </h3>
                 <ul className="flex items-center gap-2 flex-wrap">
                     <li>
-                        <button className="px-4 py-2 border rounded-md bg-white text-neutral-700 hover:bg-sky-300 hover:border-sky-300 duration-150">
+                        <button
+                            onClick={() => filterProducts("all")}
+                            className="px-4 py-2 border rounded-md bg-white text-neutral-700 hover:bg-sky-300 hover:border-sky-300 duration-150"
+                        >
                             All Products
                         </button>
                     </li>
                     <li>
-                        <button className="px-4 py-2 border rounded-md bg-white text-neutral-700 hover:bg-sky-300 hover:border-sky-300 duration-150">
+                        <button 
+                            onClick={() => filterProducts("Notebook")} 
+                            className="px-4 py-2 border rounded-md bg-white text-neutral-700 hover:bg-sky-300 hover:border-sky-300 duration-150"
+                        >
                             Notebook
                         </button>
                     </li>
                     <li>
-                        <button className="px-4 py-2 border rounded-md bg-white text-neutral-700 hover:bg-sky-300 hover:border-sky-300 duration-150">
+                        <button
+                            onClick={() => filterProducts("Smartphone")} 
+                            className="px-4 py-2 border rounded-md bg-white text-neutral-700 hover:bg-sky-300 hover:border-sky-300 duration-150"
+                        >
                             Smartphone
                         </button>
                     </li>
                     <li>
-                        <button className="px-4 py-2 border rounded-md bg-white text-neutral-700 hover:bg-sky-300 hover:border-sky-300 duration-150">
+                        <button
+                            onClick={() => filterProducts("Câmera")}
+                            className="px-4 py-2 border rounded-md bg-white text-neutral-700 hover:bg-sky-300 hover:border-sky-300 duration-150"
+                        >
                             Camera
                         </button>
                     </li>
                     <li>
-                        <button className="px-4 py-2 border rounded-md bg-white text-neutral-700 hover:bg-sky-300 hover:border-sky-300 duration-150">
+                        <button
+                            onClick={() => filterProducts("Smartwatch")} 
+                            className="px-4 py-2 border rounded-md bg-white text-neutral-700 hover:bg-sky-300 hover:border-sky-300 duration-150"
+                        >
                             Smartwatch
                         </button>
                     </li>
