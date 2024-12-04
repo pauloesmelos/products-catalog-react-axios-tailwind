@@ -7,7 +7,15 @@ export const GlobalProductsProvider = ({ children }) => {
   const [products, setProducts] = React.useState([]);
   const [product, setProduct] = React.useState([]);
   const { data } = useGetProducts(API);
-
+  
+  const filterMatch = (text) => {
+    const filter = data.map((item) => {
+      if(item.nome.toLowerCase().match(text.toLowerCase())) {
+        return item;
+      }
+    }).filter((item) => item !== undefined);
+    setProducts(filter);
+  }
   const filterProducts = (type) => {
     if(type === "all") {
       setProducts(data);
@@ -19,7 +27,7 @@ export const GlobalProductsProvider = ({ children }) => {
   }
 
   return (
-    <GlobalProducts.Provider value={{ products, setProducts, product, setProduct, filterProducts }}>
+    <GlobalProducts.Provider value={{ products, setProducts, product, setProduct, filterProducts, filterMatch }}>
       {children}
     </GlobalProducts.Provider>
   )

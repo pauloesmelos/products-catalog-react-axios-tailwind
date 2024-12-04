@@ -40,7 +40,7 @@ const Product = () => { // product specify - query by id
                 </button>
             </Link>
         </div>
-        <div className="border shadow-lg mt-6 rounded-lg p-6 w-[70%] md:w-[85%] lg:w-full">
+        <div className="border shadow-lg mt-6 rounded-lg p-6 w-[90%] sm:w-[70%] md:w-[90%] lg:w-full">
             {/* product */}
             <div className="grid grid-cols-1 gap-10 md:grid-cols-3">
                 <div className="col-span-1">
@@ -98,14 +98,14 @@ const Product = () => { // product specify - query by id
                     </p>
                     <div className="flex items-center gap-1">
                         <button 
-                            className="px-4 py-2 bg-[#2568E6] text-2xl font-medium text-white rounded-md border border-[#2568E6]
+                            className="px-4 py-2 bg-[#2568E6] text-lg font-medium text-white rounded-md border border-[#2568E6]
                             hover:bg-white hover:text-[#2568E6] duration-150"  
                             onClick={() => handleProductCart("sub")}
                         >
                             -
                         </button>
                         <input 
-                            className="bg-white w-[100px] p-2 text-center" 
+                            className="bg-white w-full md:w-[60px] lg:w-[100px] p-2 text-center" 
                             type="number" 
                             name="count" 
                             id="count" 
@@ -113,20 +113,20 @@ const Product = () => { // product specify - query by id
                             onChange={handleInputNumber}
                         />
                         <button 
-                            className="px-4 py-2 bg-[#2568E6] text-2xl font-medium text-white rounded-md border border-[#2568E6]
+                            className="px-4 py-2 bg-[#2568E6] text-lg font-medium text-white rounded-md border border-[#2568E6]
                             hover:bg-white hover:text-[#2568E6] duration-150"
                             onClick={() => handleProductCart("add")}
                         >
                             +
                         </button>
                     </div>
-                    <button className="px-6 py-2 rounded-md w-[200px] bg-sky-200 hover:opacity-50 text-[#2568E6] font-medium duration-150">
+                    <button className="px-6 py-2 rounded-md w-full lg:w-[200px] bg-sky-200 hover:opacity-50 text-[#2568E6] font-medium duration-150">
                         Add Cart
                     </button>
                     <div className="relative">
                         <p 
                             onClick={() => setDropdown(state => !state)} 
-                            className="flex items-center gap-1 cursor-pointer hover:opacity-70"
+                            className="flex items-center gap-1 cursor-pointer hover:opacity-70 text-sm lg:text-[1rem]"
                         >
                             Quantidade:
                             <span className="font-bold ml-4">

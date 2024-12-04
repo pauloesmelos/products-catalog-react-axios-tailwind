@@ -4,10 +4,18 @@ import { IoMdHeartEmpty } from "react-icons/io";
 import { IoCartOutline } from "react-icons/io5";
 import { Link } from "react-router-dom";
 import { GlobalCart } from '../../global/cart/GlobalCart';
+import GlobalProducts from '../../global/products/GlobalProducts';
 
 const Navbar = () => {
   const [search, setSearch] = React.useState("");
-  const { countUniqueProductCart } = React.useContext(GlobalCart); 
+  const { countUniqueProductCart } = React.useContext(GlobalCart);
+  const { filterMatch } = React.useContext(GlobalProducts);
+
+  const handleChange = ({ target }) => {
+    let value = target.value;
+    setSearch(value);
+    filterMatch(value);
+  }
 
   return (
     <header className="w-full bg-white">
@@ -20,7 +28,7 @@ const Navbar = () => {
                     type="text" 
                     placeholder="Enter your search product"
                     value={search}
-                    onChange={({ target }) => setSearch(target.value)}
+                    onChange={handleChange}
                 />
             </div>
             {/* recurses */}
